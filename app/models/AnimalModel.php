@@ -7,9 +7,9 @@ use Flight;
 use PDO;
 use PDOException;
 
-class AdminModel extends BaseModel
+class AnimalModel extends BaseModel
 {
-    private $table = "exam_fin_s3_admin";
+    private $table = "exam_fin_s3_animal";
 
     public function __construct($db)
     {
