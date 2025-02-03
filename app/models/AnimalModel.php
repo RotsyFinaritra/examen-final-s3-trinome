@@ -36,4 +36,18 @@ class AnimalModel extends BaseModel
     {
         return $this->update($this->table, $data, $id);
     }
+
+    public function deleteAnimal($id)
+    {
+        return $this->delete($this->table, $id);
+    }
+
+    public function getAnimalsByType($idType)
+    {
+        $sql = "SELECT * FROM $this->table WHERE id_type_animal = :id_type_animal";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(["id_type_animal" => $idType]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
