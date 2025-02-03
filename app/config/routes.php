@@ -21,8 +21,3 @@ $adminController = new AdminController();
 $router->post("/admin/login", [$adminController, 'loginAction']);
 
 $router->get("/admin/dashboard", [$adminController, 'dashboard']);
-
-$habitationController = new HabitationController();
-$router->get('/admin/dashboard/habitation/@id_habitation', [$habitationController, 'ficheHabitation']);
-$router->get("/admin/dashboard/addHabitation",[$habitationController,"addHabitationPage"]);
-$router->post("/admin/dashboard/addHabitation/submit-request",[$habitationController,"addHabitationAction"]);
