@@ -1,4 +1,4 @@
--- Active: 1718787136001@@localhost@3306
+-- Active: 1718787136001@@localhost@3306@exam_fin_s3
 create DATABASE exam_fin_s3;
 use exam_fin_s3;
 create table exam_fin_s3_type_animal (
@@ -8,7 +8,8 @@ create table exam_fin_s3_type_animal (
     prix_kg decimal(10,2) not null,
     poids_max decimal(10,2) not null,
     nb_jour_sans_manger int,
-    pourcentage_perte_poids int
+    pourcentage_perte_poids int,
+    image varchar(255)
 );
 
 CREATE TABLE exam_fin_s3_animal (
@@ -18,7 +19,6 @@ CREATE TABLE exam_fin_s3_animal (
     date_entree date,
     poids_initial decimal(10,2),
     prix_achat decimal(10,2),
-    image varchar(255),
     FOREIGN KEY (id_type_animal) REFERENCES exam_fin_s3_type_animal(id_type_animal)
 );
 
@@ -27,8 +27,11 @@ CREATE TABLE exam_fin_s3_aliment (
     id_type_animal int,
     quantite int,
     prix_unitaire decimal(10,2),
+    date_ajout date,
     FOREIGN KEY (id_type_animal) REFERENCES exam_fin_s3_type_animal(id_type_animal)
 );
+
+-- DROP TABLE exam_fin_s3_aliment;
 
 -- CREATE TABLE alimentation (
 --     id_alimentation int primary key auto_increment,

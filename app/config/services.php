@@ -1,7 +1,10 @@
 <?php
 
 use app\models\AdminModel;
+use app\models\AlimentModel;
+use app\models\AnimalModel;
 use app\models\BaseModel;
+use app\models\TypeAnimalModel;
 use flight\Engine;
 use flight\database\PdoWrapper;
 use flight\debug\database\PdoQueryCapture;
@@ -41,4 +44,17 @@ Flight::map('userModel', function () {
 });
 Flight::map('adminModel', function () {
     return new AdminModel(Flight::db());
+});
+
+Flight::map('animalModel', function () {
+    return new AnimalModel(Flight::db());
+});
+
+Flight::map('typeAnimalModel', function () {
+    return new TypeAnimalModel(Flight::db());
+});
+
+
+Flight::map('alimentModel', function () {
+    return new AlimentModel(Flight::db());
 });
