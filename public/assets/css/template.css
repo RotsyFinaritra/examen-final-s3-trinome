@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100%;
+    min-width: 250px;
+    background-color: #212b36;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 19vw;
+}
+
+.sidebar-header {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #2c2e34;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.sidebar h2 {
+    color: #fff;
+    font-size: 14px;
+}
+
+.sidebar-header img {
+    height: 40px;
+    object-fit: cover;
+    width: 40px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.menu-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 22px;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+
+.menu-item a {
+    color: #919eab;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.menu-item:hover a,
+.menu-item:hover svg {
+    color: #fff;
+    fill: #fff;
+    transition: 0.4s ease-in-out;
+}
+
+.menu-category {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #454f5b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #3a3f51;
+    border-radius: 5px;
+}
+
+.right-container {
+    height: 100%;
+    min-width: 82%;
+    width: 82vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.right-container .header-tools {
+    height: 60px;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.right-container .left-tools {
+    width: 290px;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.right-container .menu-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container .menu-box svg {
+    width: 21px;
+    height: 21px;
+}
+
+.right-container input {
+    height: 32px;
+    width: 75%;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid #c4cdd5;
+}
+
+.right-container input::placeholder {
+    border: 1px solid #c4cdd5;
+    /* font-weight: bold; */
+    font-family: Inter, sans-serif;
+}
+
+.right-container input:focus {
+    animation: focusEffect 0.5s forwards;
+    -webkit-animation: focusEffect 0.5s forwards;
+}
+
+@keyframes focusEffect {
+    from {
+        outline: none;
+        box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+
+    to {
+        outline: 1px solid #624bff;
+
+        /* outline: 1px solid red; */
+        box-shadow: 0 0 5px #634bffad;
+    }
+}
+
+.right-container .admin-tools {
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 5px;
+    justify-content: space-between;
+}
+
+.right-container .notification-icon,
+.right-container .profile-box {
+    position: relative;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f5f9;
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -ms-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+}
+
+.right-container .notification-icon:hover {
+    cursor: pointer;
+    background-color: #c1c4c7;
+}
+
+.right-container .profile-box:hover {
+    cursor: pointer;
+}
+
+.right-container .profile-box img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.right-container .status {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #198754;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    bottom: -3px;
+    right: -1px;
+    z-index: 1;
+    border: 2px solid #fff;
+}
+
+.notification-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.notification-box {
+    position: absolute;
+    width: 353px;
+    height: 450px;
+    background-color: #fff;
+    bottom: 0;
+    right: 0px;
+    top: 41px;
+    box-shadow: 0px 0px 5px #00000026;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.notification-box:hover {
+    display: block;
+}
+
+.notification-icon:hover .notification-box {
+    animation: notification 0.5s forwards;
+    -webkit-animation: notification 0.5s forwards;
+    display: block;
+}
+
+.notification-box .nav-notif {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.nav-notif p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #646464;
+
+}
+
+.notif-content {
+    width: 100%;
+    height: 394px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.each-notification {
+
+    min-height: 75px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0px 20px;
+    display: block;
+}
+
+.each-notification:hover {
+    background-color: #f1f5f9;
+}
+
+.each-notification p {
+    min-height: 30px;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+
+}
+
+.each-notification p:last-child {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.each-notification p:first-child {
+    height: 15px;
+    font-weight: 455;
+}
+
+
+@keyframes notification {
+    from {
+        top: 60px;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+* {
+    font-family: Inter, sans-serif;
+    box-sizing: border-box;
+    color: #737a83;
+}

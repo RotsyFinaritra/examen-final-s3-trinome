@@ -1,0 +1,11 @@
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Si la requête n'est pas déjà pour "public"
+RewriteCond %{REQUEST_URI} !^/public/
+# Si le fichier ou le dossier n'existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rediriger tout vers le dossier "public"
+RewriteRule ^(.*)$ public/$1 [L]
