@@ -40,3 +40,10 @@ INSERT INTO exam_fin_s3_vente_animal (id_client, id_animal, quantite, date_vente
 INSERT INTO exam_fin_s3_vente_animal (id_client, id_animal, quantite, date_vente, prix_vente)  VALUES (3, 3, 5, '2025-02-07', 3200.00);
 INSERT INTO exam_fin_s3_vente_animal (id_client, id_animal, quantite, date_vente, prix_vente)  VALUES (4, 4, 4, '2025-02-08', 2500.00);
 INSERT INTO exam_fin_s3_vente_animal (id_client, id_animal, quantite, date_vente, prix_vente) VALUES (5, 5, 10, '2025-02-09', 800.00);
+
+
+UPDATE exam_fin_s3_type_animal SET image = 'Boeuf.jpeg' WHERE id_type_animal = 1;
+UPDATE exam_fin_s3_type_animal SET image = 'Porc.jpeg' WHERE id_type_animal = 2;
+UPDATE exam_fin_s3_type_animal SET image = 'Poule.jpeg' WHERE id_type_animal = 3;
+UPDATE exam_fin_s3_type_animal SET image = 'Canard.jpg' WHERE id_type_animal = 4;
+

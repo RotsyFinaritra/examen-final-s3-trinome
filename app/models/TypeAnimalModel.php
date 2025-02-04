@@ -32,8 +32,12 @@ class TypeAnimalModel extends BaseModel
         return $this->insert($this->table, $data);
     }
 
-    public function updateTypeAnimal($id, $data)
+
+    public function updateTypeAnimal($data, $id)
     {
-        return $this->update($this->table, $data, $id);
+        $fields = implode(", ", array_map(fn($key) => "$key = :$key", array_keys($data)));
+        $stmt = $this->db->prepare("UPDATE $this->table SET $fields WHERE id_type_animal = :id");
+        $data['id'] = $id;
+        return $stmt->execute($data);
     }
 }

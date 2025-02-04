@@ -38,7 +38,7 @@ $app->set('flight.handle_errors', false); // if you want flight to handle errors
 $app->set('flight.views.path', __DIR__ . $ds . '..' . $ds . 'views'); // set the path to your view/template/ui files
 $app->set('flight.views.extension', '.php'); // set the file extension for your view/template/ui files
 $app->set('flight.content_length', true); // if flight should send a content length header
-$app->set('upload_dir', __DIR__ . $ds . '..' . $ds . '..' . $ds . 'public' . '/assets/images'); // set the path to your upload directory
+$app->set('upload_dir', __DIR__ . $ds . '..' . $ds . '..' . $ds . 'public' . '/image'); // set the path to your upload directory
 /* 
  * Get Tracy up and running
  * 

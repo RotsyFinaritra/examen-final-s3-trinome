@@ -10,6 +10,9 @@
     <link href="<?= $_SESSION['base_url'] ?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= $_SESSION['base_url'] ?>/css/ajoutAnimal.css" rel="stylesheet">
 
+    <link href="<?= $_SESSION['base_url'] ?>/css/ajoutListAnimal.css" rel="stylesheet">
+    <script src="<?= $_SESSION['base_url'] ?>/javascript/accAdmin.js"></script>
+
     <script src="<?= $_SESSION['base_url'] ?>/assets/js/jquery.min.js"></script>
     <script src="<?= $_SESSION['base_url'] ?>/assets/js/bootstrap.min.js"></script>
 
@@ -26,29 +29,30 @@
         </div>
         <nav>
             <div>
-                <button id="but1" class="showListButton actif"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>List</button>
+                <button id="but1" class="showListButton actif"><span class="glyphicon glyphicon-list"
+                        aria-hidden="true"></span>List</button>
                 <div id="list1" class="listContainer">
                     <ul>
-                        <li><a href="">Des Habitats</a></li>
-                        <li><a href="">Des Agents</a></li>
-                        <li><a href="">Des Users</a></li>
+                        <li><a href="<?= $_SESSION['base_url'] ?>/admin/animals/">Des types animal</a></li>
+                        <li><a href="<?= $_SESSION['base_url'] ?>/admin/dashBoard/">DashBoard</a></li>
                     </ul>
                 </div>
             </div>
 
             <div>
-                <button id="but2" class="showListButton actif"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>Formulaire</button>
+                <button id="but2" class="showListButton actif"><span class="glyphicon glyphicon-tasks"
+                        aria-hidden="true"></span>Formulaire</button>
                 <div id="list2" class="listContainer">
                     <ul>
-                        <li><a href="<?= $_SESSION['base_url'] ?>/admin/animals/insertion" class="actif">Ajout Animal</a></li>
+                        <li><a href="<?= $_SESSION['base_url'] ?>/admin/animals/insertion" class="actif">Ajout
+                                Animal</a></li>
                         <li><a href="<?= $_SESSION['base_url'] ?>/admin/aliments/insertion">Ajout Aliment</a></li>
-                        <li><a href="">Ajout User</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <section class="col-md-9">
+    <section class="col-md-9 col-md-offset-3" id="containte">
         <div class="back">
             <img src="<?= $_SESSION['base_url'] ?>/image/background.gif" alt="">
         </div>

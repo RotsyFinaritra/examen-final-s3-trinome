@@ -11,14 +11,19 @@ create table exam_fin_s3_type_animal (
     pourcentage_perte_poids int,
     image varchar(255)
 );
+ALTER TABLE exam_fin_s3_type_animal
+ADD COLUMN pourcentage_gain_poids INT NOT NULL DEFAULT 0;
+
 
 CREATE TABLE exam_fin_s3_animal (
     id_animal int primary key auto_increment,
     id_type_animal int,
-    nombre int,
     date_entree date,
     poids_initial decimal(10,2),
     prix_achat decimal(10,2),
+    quota_nourriture decimal(10,2),
+    auto_vente boolean default false,
+    image varchar(100),
     FOREIGN KEY (id_type_animal) REFERENCES exam_fin_s3_type_animal(id_type_animal)
 );
 
@@ -59,4 +64,3 @@ CREATE TABLE exam_fin_s3_vente_animal (
     FOREIGN KEY (id_client) REFERENCES exam_fin_s3_client(id_client),
     FOREIGN KEY (id_animal) REFERENCES exam_fin_s3_animal(id_animal)
 );
-
